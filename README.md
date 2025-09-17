@@ -8,17 +8,17 @@
 2. **Set up Python environment**
 
     python -m venv venv  
-    # Activate environment
+    ## Activate environment
     source venv/bin/activate   # Linux/Mac  
     venv\Scripts\activate      # Windows  
-    # Upgrade pip and install dependencies
+    ## Upgrade pip and install dependencies
     pip install --upgrade pip  
     pip install -r requirements.txt
 
 3. **Install Ollama and pull the model**
 
-    # Install Ollama if not already installed
-    # Pull the instruct model
+    ## Install Ollama if not already installed
+    ## Pull the instruct model
     ollama pull gemma:2b-instruct
 
 4. **Run the application**
