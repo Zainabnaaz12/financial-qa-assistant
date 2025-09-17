@@ -2,7 +2,7 @@
 
 1. **Clone the repository**
 
-    git clone https://github.com/<Zainabnaaz12>/financial-doc-qna.git  
+    git clone https://github.com/<Zainabnaaz12>/financial-qa-assistant.git  
     cd financial-doc-qna
 
 2. **Set up Python environment**
