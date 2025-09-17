@@ -1,0 +1,317 @@
+/*
+    ---------------------------------------------
+    Base Styles: Dark Theme & Font
+    ---------------------------------------------
+*/
+body {
+    color: #f1f5f9; /* Slate 100 for text */
+    background-color: #020617; /* Darkest Slate 950 for body background */
+    font-family: 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Make Streamlit's main app container also dark */
+.stApp {
+    background-color: #020617;
+}
+
+/*
+    ---------------------------------------------
+    Universal Text & UI Fixes
+    ---------------------------------------------
+*/
+/* Force all markdown and general text to be white */
+div[data-testid="stMarkdownContainer"],
+div[data-testid="stMarkdownContainer"] p,
+div[data-testid="stMarkdownContainer"] h1,
+div[data-testid="stMarkdownContainer"] h2,
+div[data-testid="stMarkdownContainer"] h3 {
+    color: #f1f5f9 !important;
+}
+
+/* Force dataframe and table text to be white */
+[data-testid="stDataFrame"] .data-cell,
+[data-testid="stDataFrame"] .header-cell {
+    color: #f1f5f9 !important;
+}
+
+/* Fix for metric labels */
+[data-testid="stMetricLabel"] > div {
+    color: #94a3b8 !important;
+    font-weight: 500;
+}
+
+/* Fix for sidebar text */
+.st-emotion-cache-12ttj6i p {
+    color: #f1f5f9 !important;
+}
+
+/*
+    ---------------------------------------------
+    Typography & Headings
+    ---------------------------------------------
+*/
+h1, h2, h3, h4, h5, h6 {
+    color: #cbd5e1; /* Slate 300 for headings */
+    font-weight: 600; /* Semi-bold */
+}
+
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #e2e8f0; /* White-ish for main title */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/*
+    ---------------------------------------------
+    Buttons & Interactive Elements
+    ---------------------------------------------
+*/
+/* General button styling */
+.stButton>button {
+    width: 100%;
+    border: 1px solid #475569; /* Slate 600 border */
+    border-radius: 0.5rem; /* Rounded corners */
+    background-color: #1e293b; /* Dark Slate 800 background */
+    color: #f1f5f9;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* Hover effect for buttons */
+.stButton>button:hover {
+    background-color: #334155; /* Slightly lighter Slate 700 */
+    color: #ffffff;
+    border-color: #64748b; /* Slate 500 */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Active/click state */
+.stButton>button:active {
+    transform: translateY(0);
+    box-shadow: none;
+}
+
+/* Special styling for "Get Started" and "Try Demo" buttons */
+.stButton>button[kind="secondary"] {
+    background-color: transparent;
+    border: 2px solid #3b82f6; /* Blue 500 */
+}
+
+/*
+    ---------------------------------------------
+    Chat Interface - FIXED
+    ---------------------------------------------
+*/
+.user-msg, .assistant-msg {
+    padding: 1rem 1.25rem;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+    max-width: 85%;
+    font-size: 1rem;
+}
+
+.user-msg {
+    background-color: #3b82f6; /* Blue 500 */
+    color: #ffffff;
+    margin-left: auto; /* Aligns to the right */
+    border-bottom-right-radius: 0.25rem;
+}
+
+.assistant-msg {
+    background-color: #1f2937; /* Dark Gray 800 */
+    color: #e5e7eb; /* Gray 200 */
+    margin-right: auto; /* Aligns to the left */
+    border-bottom-left-radius: 0.25rem;
+}
+
+/* Chat Input Box - Correct selectors for st.chat_input */
+[data-testid="stChatInputContainer"] {
+    background-color: #1e293b !important;
+    border: 2px solid #334155 !important;
+    border-radius: 16px !important;
+}
+
+[data-testid="stChatInputContainer"] textarea {
+    background-color: #1e293b !important;
+    color: #f1f5f9 !important;
+    border: none !important;
+}
+
+[data-testid="stChatInputContainer"] textarea::placeholder {
+    color: #94a3b8 !important;
+}
+
+/* Chat input focus state */
+[data-testid="stChatInputContainer"]:focus-within {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 15px rgba(59, 130, 246, 0.4) !important;
+}
+
+/* Fix for old text input styling - removed incorrect selector */
+div[data-testid="stTextInput"] > div > div > input {
+    color: #f1f5f9;
+    background-color: #1e293b;
+    border: 1px solid #334155;
+}
+
+/* Fix placeholder text color for text inputs */
+div[data-testid="stTextInput"] > div > div > input::placeholder {
+    color: #cbd5e1;
+}
+
+/*
+    ---------------------------------------------
+    Sidebar, Metrics & Tabs
+    ---------------------------------------------
+*/
+/* Sidebar styling */
+.stSidebar {
+    background-color: #0f172a; /* Dark Slate 900 */
+    padding: 1.5rem 1rem;
+    border-right: 1px solid #1e293b;
+}
+
+/* Sidebar title styling */
+.stSidebar .stMarkdown h1 {
+    color: #f1f5f9 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    border-bottom: 2px solid #334155;
+    padding-bottom: 0.5rem;
+}
+
+/* Sidebar content styling */
+.stSidebar .stMarkdown p {
+    color: #94a3b8 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+/* Metrics */
+[data-testid="stMetric"] {
+    background-color: #1e293b;
+    border-radius: 0.75rem;
+    border: 1px solid #334155;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+[data-testid="stMetricValue"] {
+    color: #e2e8f0;
+    font-size: 1.75rem;
+    font-weight: 700;
+}
+
+/* Tabs */
+[data-testid="stTabs"] [data-testid="stTab"] {
+    background-color: #1e293b;
+    border-radius: 0.5rem 0.5rem 0 0;
+    border: 1px solid #334155;
+    border-bottom: none;
+    padding: 1rem;
+    color: #f1f5f9; /* White text for tabs */
+    font-weight: 600;
+}
+[data-testid="stTabs"] [data-testid="stTab"][data-selected="true"] {
+    background-color: #334155;
+    color: #f1f5f9;
+    border-color: #64748b;
+}
+
+/* Extracted Content & Dataframes */
+[data-testid="stDataFrame"] {
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+    background-color: #1e293b;
+    color: #f1f5f9;
+}
+
+.stMarkdownContainer {
+    background-color: #1e293b;
+    padding: 1rem;
+    border: 1px solid #334155;
+    border-radius: 0.5rem;
+}
+
+/* Suggested questions section */
+.stButton>button[kind="suggestion"] {
+    background-color: #1f2937;
+    color: #94a3b8;
+    border: 1px solid #334155;
+    transition: all 0.2s ease;
+}
+
+.stButton>button[kind="suggestion"]:hover {
+    background-color: #334155;
+    color: #ffffff;
+    border-color: #64748b;
+    transform: translateY(-2px);
+}
+
+/*
+    ---------------------------------------------
+    Additional Fixes for Chat History & UI
+    ---------------------------------------------
+/* Force sidebar to black */
+[data-testid="stSidebar"] {
+    background-color: #000000 !important; /* pure black */
+    color: #ffffff !important;
+    border-right: 1px solid #111111 !important;
+}
+
+/* Sidebar title and general text */
+[data-testid="stSidebar"] .stMarkdown h1,
+[data-testid="stSidebar"] p,
+[data-testid="stSidebar"] span {
+    color: #ffffff !important;
+}
+
+
+/* Fix for any remaining invisible text */
+.stMarkdown, .stMarkdown * {
+    color: #f1f5f9 !important;
+}
+
+/* Fix for dividers */
+hr {
+    border-color: #334155 !important;
+    margin: 2rem 0 !important;
+}
+
+/* Fix for spinners */
+.stSpinner > div {
+    border-color: #3b82f6 transparent #3b82f6 transparent !important;
+}
+
+/* Fix for any containers that might be white */
+.stContainer, [data-testid="stVerticalBlock"] {
+    background-color: transparent !important;
+}
+
+/* -------------------------------
+   Fix for Report Name Box
+---------------------------------*/
+h3[data-testid="stMarkdownContainer"] {
+    background-color: #1e293b !important; /* Dark background for the box */
+    color: #f1f5f9 !important;            /* White text */
+    padding: 0.75rem 1rem !important;
+    border-radius: 0.5rem !important;
+    border: 1px solid #334155 !important;
+    display: inline-block;
+}
+
+/* -------------------------------
+   Fix for Sidebar Chat History Title
+---------------------------------*/
+.stSidebar .stMarkdown h1,
+.stSidebar .stMarkdown h2,
+.stSidebar .stMarkdown h3 {
+    color: #f1f5f9 !important;  /* Ensures the title is visible */
+}
