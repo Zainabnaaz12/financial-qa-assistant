@@ -3,7 +3,7 @@
 1. **Clone the repository**
 
     git clone https://github.com/<Zainabnaaz12>/financial-qa-assistant.git  
-    cd financial-doc-qna
+    cd financial-qa-assistant
 
 2. **Set up Python environment**
 
